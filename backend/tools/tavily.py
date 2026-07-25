@@ -1,3 +1,4 @@
+"""Tavily search API integration module for web research data fetching."""
 import sys
 import os
 from typing import Dict, Any
@@ -7,9 +8,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import settings
 
 async def search_tavily(query: str, max_results: int = 5) -> Dict[str, Any]:
-    """
-    Search Tavily API using the official Async SDK.
-    """
+    """Execute asynchronous web search queries via the Tavily API."""
     if not settings.TAVILY_API_KEY:
         raise ValueError("TAVILY_API_KEY is not set.")
     

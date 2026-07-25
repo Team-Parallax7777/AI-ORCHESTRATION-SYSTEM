@@ -1,4 +1,4 @@
-# GitHub Tool Integration
+"""GitHub API integration module for automated issue creation and management."""
 import httpx
 import logging
 from typing import Dict, Any, List, Optional
@@ -7,6 +7,7 @@ from config import settings
 logger = logging.getLogger(__name__)
 
 async def create_github_issue(repo: str, title: str, body: str, labels: Optional[List[str]] = None, token: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    """Create a single GitHub issue in the target repository using the REST API."""
     actual_token = token or settings.GITHUB_TOKEN
     if not actual_token:
         logger.warning("No GitHub token provided. Skipping issue creation.")
@@ -44,6 +45,7 @@ async def create_github_issue(repo: str, title: str, body: str, labels: Optional
         return None
 
 async def create_github_issues_bulk(repo: str, issues: List[Any], token: Optional[str] = None) -> List[Dict[str, Any]]:
+    """Batch-create multiple GitHub issues for a backlog sprint plan."""
     created = []
     for issue in issues:
         if hasattr(issue, 'model_dump'):
