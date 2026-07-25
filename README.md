@@ -83,9 +83,9 @@ graph TD
     Interrupted -- "✅ Continue Anyway" --> Researcher
 
     Gate -- "🟢 risk < 0.6" --> Researcher["🔍 2. Market Researcher\nGroq + Tavily Search API"]
-    Researcher --> PM["📋 3. Product Manager\nGemini 2.5 Flash"]
+    Researcher --> PM["📋 3. Product Manager\nllama-3.3-70b"]
 
-    PM --> Architect["📐 4. System Architect\nNVIDIA NIM · nemotron-70b"]
+    PM --> Architect["📐 4. System Architect\nGroq · llama-3.3-70b"]
     PM --> Marketing["📣 6. Marketing Specialist\nGroq · llama-3.3-70b"]
 
     Architect --> EM["⚙️ 5. Engineering Manager\nGroq + GitHub API"]
