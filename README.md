@@ -679,9 +679,7 @@ git push origin feature/your-feature-name
 
 <div align="center">
 
-**Varun** · Team PARALLAX
-
-[![GitHub](https://img.shields.io/badge/GitHub-varun2507027108--oss-181717?style=for-the-badge&logo=github)](https://github.com/varun2507027108-oss)
+**Team PARALLAX
 
 </div>
 
@@ -689,7 +687,7 @@ git push origin feature/your-feature-name
 
 <div align="center">
 
-*Built with obsessive attention to detail during edQuest · Team PARALLAX*
+*Built with obsessive attention to detail during INNOVA Hackathon · Team PARALLAX*
 
 **If Blueprint helped you, drop a ⭐ — it means a lot.**
 
