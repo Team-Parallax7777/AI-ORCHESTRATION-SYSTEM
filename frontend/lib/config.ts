@@ -1,4 +1,10 @@
+/** Backend API target URL for FastAPI service communication. */
 export const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+
+/** GitHub OAuth client ID for repository access authorization. */
 export const GITHUB_CLIENT_ID = process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID || "Ov23lirMV0dDHTxa5rQS";
+
+/** Notion OAuth client ID for page creation authorization. */
 export const NOTION_CLIENT_ID = process.env.NEXT_PUBLIC_NOTION_CLIENT_ID || "388d872b-594c-8104-9c3d-003747371d37";
+
 
