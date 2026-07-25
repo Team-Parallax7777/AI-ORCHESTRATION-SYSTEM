@@ -1,3 +1,4 @@
+"""Database access layer supporting Supabase cloud storage with SQLite fallback."""
 import json
 import sqlite3
 import threading
@@ -22,12 +23,14 @@ supabase_client: Client = create_client(url, key)
 DB_PATH = "founder_os.db"
 db_lock = threading.Lock()
 
-def get_db_connection():
+def get_db_connection() -> sqlite3.Connection:
+    """Create and return a thread-safe connection to the local SQLite fallback database."""
     conn = sqlite3.connect(DB_PATH, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
 
-def init_db():
+def init_db() -> None:
+    """Initialize fallback SQLite database tables if they do not exist."""
     conn = get_db_connection()
     try:
         conn.execute("""
