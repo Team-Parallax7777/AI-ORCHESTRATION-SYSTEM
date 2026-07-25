@@ -679,7 +679,7 @@ git push origin feature/your-feature-name
 
 <div align="center">
 
-**Team PARALLAX
+**Team PARALLAX**
 
 </div>
 
