@@ -1,8 +1,12 @@
-# Application Configuration Settings
+"""Configuration management module for AI Orchestration System.
+
+Parses environment variables and runtime settings using Pydantic Settings.
+"""
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
 
 class Settings(BaseSettings):
+    """Application settings and API credentials configuration."""
     # API Keys
     GROQ_API_KEY: str = Field(default="")
     GEMINI_API_KEY: str = Field(default="")

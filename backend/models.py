@@ -1,15 +1,17 @@
-# models.py
+"""Data models and state schemas for the multi-agent AI orchestration pipeline."""
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional, Annotated, Union
 
 # --- Reducers for parallel state merging ---
 
 def reduce_dict(left: Optional[Dict[str, Any]], right: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """Merge dictionary states for parallel node execution in LangGraph."""
     merged = dict(left or {})
     merged.update(right or {})
     return merged
 
 def reduce_list(left: Optional[List[Any]], right: Optional[List[Any]]) -> List[Any]:
+    """Deduplicate and append list items for parallel node execution in LangGraph."""
     merged = list(left or [])
     for item in (right or []):
         if item not in merged:
